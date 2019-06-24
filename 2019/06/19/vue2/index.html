@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="blog, limi">
+  <meta name="keywords" content="-前端 -vue,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Teresa&amp;Limi">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="VUE从入门到放弃の指令内置指令自定义指令操作DOM，提高代码复用率。vue2.0中，代码复用和抽象的主要形式是组件，但有时候也需要自定义指令，比如。 在图片未完成加载前，用随机的背景色占位，图片加载完成后才直接渲染出来 自定义指令的第二用处是用于集成第三方插件。 注册全局注册Vue.directive(&amp;#39;name&amp;#39;,object)name是指令的唯一标识，如v-name，obje">
+<meta name="keywords" content="-前端 -vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VUE从入门到放弃の指令">
+<meta property="og:url" content="http://yoursite.com/2019/06/19/vue2/index.html">
 <meta property="og:site_name" content="Teresa&amp;Limi">
+<meta property="og:description" content="VUE从入门到放弃の指令内置指令自定义指令操作DOM，提高代码复用率。vue2.0中，代码复用和抽象的主要形式是组件，但有时候也需要自定义指令，比如。 在图片未完成加载前，用随机的背景色占位，图片加载完成后才直接渲染出来 自定义指令的第二用处是用于集成第三方插件。 注册全局注册Vue.directive(&amp;#39;name&amp;#39;,object)name是指令的唯一标识，如v-name，obje">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-24T12:36:59.944Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Teresa&amp;Limi">
+<meta name="twitter:title" content="VUE从入门到放弃の指令">
+<meta name="twitter:description" content="VUE从入门到放弃の指令内置指令自定义指令操作DOM，提高代码复用率。vue2.0中，代码复用和抽象的主要形式是组件，但有时候也需要自定义指令，比如。 在图片未完成加载前，用随机的背景色占位，图片加载完成后才直接渲染出来 自定义指令的第二用处是用于集成第三方插件。 注册全局注册Vue.directive(&amp;#39;name&amp;#39;,object)name是指令的唯一标识，如v-name，obje">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/19/vue2/">
 
 
 
 
 
-  <title>归档 | Teresa&Limi</title>
+  <title>VUE从入门到放弃の指令 | Teresa&Limi</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/teresaLimi" class="github-corner" aria-label="View source on GitHub">
       <svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -277,247 +282,232 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/19/vue2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tetesa & Limi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Teresa&Limi">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">VUE从入门到放弃の指令</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-19T21:24:09+08:00">
+                2019-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">-前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
           
         
-        嗯..! 目前共计 6 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/24/vue4/" itemprop="url">
+            <div class="post-wordcount">
               
-                <span itemprop="name">VUE从入门到放弃の过渡</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-24T20:37:58+08:00" content="2019-06-24">
-          06-24
-        </time>
-      </div>
+              
 
-    </header>
-  </article>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/21/vueQustion/" itemprop="url">
-              
-                <span itemprop="name">VUE学习中问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-21T15:37:20+08:00" content="2019-06-21">
-          06-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <h1 id="VUE从入门到放弃の指令"><a href="#VUE从入门到放弃の指令" class="headerlink" title="VUE从入门到放弃の指令"></a>VUE从入门到放弃の指令</h1><h2 id="内置指令"><a href="#内置指令" class="headerlink" title="内置指令"></a>内置指令</h2><h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h2><p>操作DOM，提高代码复用率。vue2.0中，代码复用和抽象的主要形式是组件，但有时候也需要自定义指令，比如。</p>
+<p>在图片未完成加载前，用随机的背景色占位，图片加载完成后才直接渲染出来</p>
+<p>自定义指令的第二用处是用于集成第三方插件。</p>
+<h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><h4 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h4><p><code>Vue.directive(&#39;name&#39;,object)</code>name是指令的唯一标识，如<code>v-name</code>，object是指令的相关属性和钩子函数。</p>
+<h4 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h4><p><code>directive：{&#39;name&#39;:object}</code>在组件的选项中注册，只能在该组件内使用。</p>
+<p>name可以采用驼峰式命名如<code>nameExp</code>，使用时则用 <code>-</code> 连接<code>v-name-exp</code>。</p>
+<h3 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h3><p>都是可选。</p>
+<ul>
+<li><code>bind</code>：指令第一次绑定到元素时调用。在这里可以进行<strong>一次性</strong>的初始化设置。</li>
+<li><code>inserted</code>：被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。</li>
+<li><code>update</code>：所在组件的 VNode 更新时调用，<strong>但是可能发生在其子 VNode 更新之前</strong>。指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的模板更新。</li>
+<li><code>componentUpdated</code>：指令所在组件的 VNode <strong>及其子 VNode</strong> 全部更新后调用。</li>
+<li><code>unbind</code>：只调用一次，指令与元素解绑时调用。</li>
+</ul>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>除<code>el</code>外，都是只读的。按顺序传参。</p>
+<ul>
+<li><code>el</code>：指令所绑定的元素，可以用来直接操作 DOM 。</li>
+<li><code>binding</code>：一个对象，包含以下属性：<ul>
+<li><code>name</code>：指令名，不包括 <code>v-</code> 前缀。</li>
+<li><code>value</code>：指令的绑定值，例如：<code>v-my-directive=&quot;1 + 1&quot;</code> 中，绑定值为 <code>2</code>。</li>
+<li><code>oldValue</code>：指令绑定的前一个值，仅在 <code>update</code> 和 <code>componentUpdated</code> 钩子中可用。无论值是否改变都可用。</li>
+<li><code>expression</code>：字符串形式的指令表达式。例如 <code>v-my-directive=&quot;1 + 1&quot;</code> 中，表达式为 <code>&quot;1 + 1&quot;</code>。</li>
+<li><code>arg</code>：传给指令的参数，可选。例如 <code>v-my-directive:foo</code> 中，参数为 <code>&quot;foo&quot;</code>。</li>
+<li><code>modifiers</code>：一个包含修饰符的对象。例如：<code>v-my-directive.foo.bar</code> 中，修饰符对象为 <code>{ foo: true, bar: true }</code>。</li>
+</ul>
+</li>
+<li><code>vnode</code>：Vue 编译生成的虚拟节点。</li>
+<li><code>oldVnode</code>：上一个虚拟节点，仅在 <code>update</code> 和 <code>componentUpdated</code> 钩子中可用。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-have-name</span>&gt;</span>111<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-inline-order</span>=<span class="string">"123+1"</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"clickBtn"</span>&gt;</span>click<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"unbindBtn"</span>&gt;</span>unbind<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-inline-order2:foo</span>=<span class="string">"[msg]"</span> <span class="attr">id</span>=<span class="string">'bind'</span> <span class="attr">v-if</span>=<span class="string">"ifbind"</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    Vue.directive('haveName',&#123;</span><br><span class="line">        bind: function (el) &#123;</span><br><span class="line">            console.log(el);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    var vm = new Vue(&#123;</span><br><span class="line">        el: '#app',</span><br><span class="line">        data: &#123;</span><br><span class="line">            msg:'456',</span><br><span class="line">            ifbind: true</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            clickBtn: function () &#123;</span><br><span class="line">                this.msg += "123"</span><br><span class="line">            &#125;,</span><br><span class="line">            unbindBtn: function () &#123;</span><br><span class="line">                //v-if触发解绑事件</span><br><span class="line">                this.ifbind = false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        directives: &#123;</span><br><span class="line">            'inlineOrder': &#123;</span><br><span class="line">                inserted: function (el, binding) &#123;</span><br><span class="line">                    console.log(el, binding)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            'inlineOrder2': &#123;</span><br><span class="line">                bind: function (el) &#123;</span><br><span class="line">                    this.msg = "789"</span><br><span class="line">                &#125;,</span><br><span class="line">                inserted: function (binding) &#123;</span><br><span class="line">                    //此处显示的是当前的el。</span><br><span class="line">                    //因为默认el是第一个参数,哪怕起名叫binding,实际上还是显示el的值。</span><br><span class="line">                    console.log(binding)</span><br><span class="line">                &#125;,</span><br><span class="line">                update: function (el, binding, oldVnode) &#123;</span><br><span class="line">                    console.log(el, binding, oldVnode)</span><br><span class="line">                &#125;,</span><br><span class="line">                componentUpdated: function (el, binding, Vnode) &#123;</span><br><span class="line">                    console.log(el, binding, Vnode)</span><br><span class="line">                &#125;,</span><br><span class="line">                unbind: function () &#123;</span><br><span class="line">                    console.log('unbind')</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/19/vue3/" itemprop="url">
-              
-                <span itemprop="name">VUE从入门到放弃の组件</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-19T21:25:24+08:00" content="2019-06-19">
-          06-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>自定义指令上参数值如果是一个实例上的变量，则用<code>[]</code>包裹。</li>
+<li>指令函数能够接受所有合法的 JavaScript 表达式。</li>
+<li>如果想在 <code>bind</code> 和 <code>update</code> 时触发相同行为，而不关心其它的钩子，可以采用简写。直接在<code>Vue.directive(&#39;name&#39;,object)</code>或<code>directive:{‘name’:object}</code>时，将<code>object</code>写成需要执行的函数即可。</li>
+</ul>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/19/vue2/" itemprop="url">
-              
-                <span itemprop="name">VUE从入门到放弃の指令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-19T21:24:09+08:00" content="2019-06-19">
-          06-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/16/vue1/" itemprop="url">
-              
-                <span itemprop="name">VUE从入门到放弃の简介与基础特性</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-16T19:35:29+08:00" content="2019-06-16">
-          06-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/07/webpack1/" itemprop="url">
-              
-                <span itemprop="name">webpack-从入门到放弃</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-07T11:03:24+08:00" content="2019-06-07">
-          06-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-vue/" rel="tag"># -前端 -vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/16/vue1/" rel="next" title="VUE从入门到放弃の简介与基础特性">
+                <i class="fa fa-chevron-left"></i> VUE从入门到放弃の简介与基础特性
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/19/vue3/" rel="prev" title="VUE从入门到放弃の组件">
+                VUE从入门到放弃の组件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -525,6 +515,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -545,8 +539,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -624,6 +627,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VUE从入门到放弃の指令"><span class="nav-number">1.</span> <span class="nav-text">VUE从入门到放弃の指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内置指令"><span class="nav-number">1.1.</span> <span class="nav-text">内置指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义指令"><span class="nav-number">1.2.</span> <span class="nav-text">自定义指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册"><span class="nav-number">1.2.1.</span> <span class="nav-text">注册</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局注册"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">全局注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局部注册"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">局部注册</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#钩子函数"><span class="nav-number">1.2.2.</span> <span class="nav-text">钩子函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">1.2.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -787,6 +806,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
