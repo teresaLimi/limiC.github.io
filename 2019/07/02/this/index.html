@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="-前端 -node,">
+  <meta name="keywords" content="-前端 -JavaScript,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="angular、jQuery、vue、react等是对原本JS的一种封装，而Node.js不是一个js库或框架，它是一个基于chrome v8引擎的JavaScript运行环境。  支持同步和异步，使用事件驱动。 使JavaScript 可以在浏览器之外上运行。 提供很多功能性模块（API） 开发web应用的服务端 开发客户端程序  传统js文件从服务器中拿到浏览器后，在浏览器进行解释，Node.">
-<meta name="keywords" content="-前端 -node">
+<meta name="description" content="概述 this是什么？  它是JS关键字，在JS中具有特殊意义，代表一个空间地址； 上下文对象就是 this 指针,即被调用函数所处的环境。  this不会指向？   不会指向作用域 将包含this的函数，作为属性储存的对象，并不认为是this所指代的对象 this最初被定义的对象或函数，也不一定是this指代的内容  绑定规则this的指向主要看函数的调用位置，绑定规则总共有下面5种。 1、默认">
+<meta name="keywords" content="-前端 -JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NodeJs从入门到放弃">
-<meta property="og:url" content="http://yoursite.com/2019/06/27/node-js/index.html">
+<meta property="og:title" content="JavaScript中的this指向">
+<meta property="og:url" content="http://yoursite.com/2019/07/02/this/index.html">
 <meta property="og:site_name" content="Teresa&amp;Limi">
-<meta property="og:description" content="angular、jQuery、vue、react等是对原本JS的一种封装，而Node.js不是一个js库或框架，它是一个基于chrome v8引擎的JavaScript运行环境。  支持同步和异步，使用事件驱动。 使JavaScript 可以在浏览器之外上运行。 提供很多功能性模块（API） 开发web应用的服务端 开发客户端程序  传统js文件从服务器中拿到浏览器后，在浏览器进行解释，Node.">
+<meta property="og:description" content="概述 this是什么？  它是JS关键字，在JS中具有特殊意义，代表一个空间地址； 上下文对象就是 this 指针,即被调用函数所处的环境。  this不会指向？   不会指向作用域 将包含this的函数，作为属性储存的对象，并不认为是this所指代的对象 this最初被定义的对象或函数，也不一定是this指代的内容  绑定规则this的指向主要看函数的调用位置，绑定规则总共有下面5种。 1、默认">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-28T05:17:19.535Z">
+<meta property="og:updated_time" content="2019-07-04T08:50:31.001Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NodeJs从入门到放弃">
-<meta name="twitter:description" content="angular、jQuery、vue、react等是对原本JS的一种封装，而Node.js不是一个js库或框架，它是一个基于chrome v8引擎的JavaScript运行环境。  支持同步和异步，使用事件驱动。 使JavaScript 可以在浏览器之外上运行。 提供很多功能性模块（API） 开发web应用的服务端 开发客户端程序  传统js文件从服务器中拿到浏览器后，在浏览器进行解释，Node.">
+<meta name="twitter:title" content="JavaScript中的this指向">
+<meta name="twitter:description" content="概述 this是什么？  它是JS关键字，在JS中具有特殊意义，代表一个空间地址； 上下文对象就是 this 指针,即被调用函数所处的环境。  this不会指向？   不会指向作用域 将包含this的函数，作为属性储存的对象，并不认为是this所指代的对象 this最初被定义的对象或函数，也不一定是this指代的内容  绑定规则this的指向主要看函数的调用位置，绑定规则总共有下面5种。 1、默认">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/27/node-js/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/02/this/">
 
 
 
 
 
-  <title>NodeJs从入门到放弃 | Teresa&Limi</title>
+  <title>JavaScript中的this指向 | Teresa&Limi</title>
   
 
 
@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/27/node-js/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/02/this/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tetesa & Limi">
@@ -313,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">NodeJs从入门到放弃</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript中的this指向</h1>
         
 
         <div class="post-meta">
@@ -325,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-27T21:38:53+08:00">
-                2019-06-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-02T10:16:58+08:00">
+                2019-07-02
               </time>
             
 
@@ -409,71 +409,84 @@
       
 
       
-        <p>angular、jQuery、vue、react等是对原本JS的一种封装，而Node.js不是一个js库或框架，它是一个基于chrome v8引擎的JavaScript<strong>运行环境</strong>。</p>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><blockquote>
+<p>this是什么？</p>
+</blockquote>
+<p>它是JS关键字，在JS中具有特殊意义，代表一个空间地址；</p>
+<p>上下文对象就是 <code>this</code> 指针,即被调用函数所处的环境。</p>
+<blockquote>
+<p>this不会指向？</p>
+</blockquote>
 <ul>
-<li>支持同步和异步，使用事件驱动。</li>
-<li>使JavaScript 可以在浏览器之外上运行。</li>
-<li>提供很多功能性模块（API）</li>
-<li>开发web应用的服务端</li>
-<li>开发客户端程序</li>
+<li>不会指向作用域</li>
+<li>将包含<code>this</code>的函数，作为属性储存的对象，并不认为是<code>this</code>所指代的对象</li>
+<li><code>this</code>最初被定义的对象或函数，也不一定是<code>this</code>指代的内容</li>
 </ul>
-<p>传统js文件从服务器中拿到浏览器后，在浏览器进行解释，Node.js则是在服务端将js文件运行出结果以后，将结果返回给浏览器。</p>
-<p>相对后台语言优势：</p>
+<h1 id="绑定规则"><a href="#绑定规则" class="headerlink" title="绑定规则"></a>绑定规则</h1><p><code>this</code>的指向主要看<strong>函数的调用位置</strong>，绑定规则总共有下面5种。</p>
+<h2 id="1、默认绑定"><a href="#1、默认绑定" class="headerlink" title="1、默认绑定"></a>1、默认绑定</h2><ul>
+<li>严格模式：绑定undefined</li>
+<li>非严格模式：绑定全局</li>
+</ul>
+<h2 id="2、隐式绑定"><a href="#2、隐式绑定" class="headerlink" title="2、隐式绑定"></a>2、隐式绑定</h2><h3 id="绑定到当前上下文对象"><a href="#绑定到当前上下文对象" class="headerlink" title="绑定到当前上下文对象"></a>绑定到当前上下文对象</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)<span class="comment">//1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    foo: foo<span class="comment">//在此隐式绑定</span></span><br><span class="line">&#125;</span><br><span class="line">obj.foo();</span><br></pre></td></tr></table></figure>
+
+<h3 id="特定情况下会丢失绑定对象"><a href="#特定情况下会丢失绑定对象" class="headerlink" title="特定情况下会丢失绑定对象"></a>特定情况下会丢失绑定对象</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)<span class="comment">//报错，a is not defined</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    foo: foo<span class="comment">//在此隐式绑定</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = obj.foo;<span class="comment">//此处b相当于直接指向foo函数，而不是obj.foo()</span></span><br><span class="line">b();<span class="comment">//这样调用就会丢失绑定对象，this指向全局</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>性能</li>
-<li>和前台JS配合很方便</li>
+<li><p>参数传递就是一种隐式赋值，传入函数时也会被隐式赋值。回调函数丢失<code>this</code>绑定是非常常见的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)<span class="comment">//报错，a is not defined</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    fn();<span class="comment">//实际调用位置</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;</span><br><span class="line">foo1(obj.foo);</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p>为了编写可维护的代码，我们把很多函数分组，分别放到不同的文件里，这样，每个文件包含的代码就相对较少，很多编程语言都采用这种组织代码的方式。在Node环境中，一个.js文件就称之为一个模块（module）。</p>
+<h2 id="3、显式绑定"><a href="#3、显式绑定" class="headerlink" title="3、显式绑定"></a>3、显式绑定</h2><p>通过<code>call()</code>或<code>apply()</code>，第一个参数是一个对象，在调用函数时将这个对象绑定到this。因为直接指定this的绑定对象，称之为显示绑定。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)<span class="comment">//1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">foo.call(obj);<span class="comment">//显式绑定</span></span><br></pre></td></tr></table></figure>
+
+<p>call()、apply()显示绑定无法解决丢失绑定问题</p>
+<h2 id="丢失绑定解决办法"><a href="#丢失绑定解决办法" class="headerlink" title="丢失绑定解决办法"></a>丢失绑定解决办法</h2><h4 id="硬绑定"><a href="#硬绑定" class="headerlink" title="硬绑定"></a>硬绑定</h4><p>创建函数bar()，并在它的内部手动调用foo.call(obj)，强制把foo的this绑定到了obj。</p>
 <ul>
-<li>提高了代码的可维护性。</li>
-<li>可以引用第三方库和内置模块，便于编写。</li>
-<li>使用模块还可以避免函数名和变量名冲突。</li>
+<li><p>bind()会返回一个硬绑定的新函数</p>
+</li>
+<li><p>API调用的“上下文”，JS许多内置函数提供了一个可选参数，被称之为“上下文”（context），其作用和<code>bind(..)</code>一样，确保回调函数使用指定的this。</p>
+</li>
 </ul>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>我们可以将每个js文件都看作单独的模块，使用module.exports对外暴露，在其他模块中，可以用require()进行引用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//hello.js作为模块</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello world'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.export = hello;</span><br></pre></td></tr></table></figure>
+<h2 id="4、new绑定"><a href="#4、new绑定" class="headerlink" title="4、new绑定"></a>4、new绑定</h2><h3 id="new的过程？"><a href="#new的过程？" class="headerlink" title="new的过程？"></a>new的过程？</h3><p>使用<code>new</code>来调用函数，或者说发生构造函数调用时，会自动执行下面的操作。</p>
+<ul>
+<li>1、创建（或者说构造）一个新对象。</li>
+<li>2、这个新对象会被执行<code>[[Prototype]]</code>连接。</li>
+<li>3、这个新对象会绑定到函数调用的<code>this</code>。</li>
+<li>4、如果函数没有返回其他对象，那么<code>new</code>表达式中的函数调用会自动返回这个新对象。</li>
+</ul>
+<h3 id="传入Null"><a href="#传入Null" class="headerlink" title="传入Null"></a>传入Null</h3><p>把<code>null</code>或者<code>undefined</code>作为<code>this</code>的绑定对象传入<code>call</code>、<code>apply</code>或者<code>bind</code>，这些值在调用时会被忽略，实际应用的是默认规则。</p>
+<h5 id="下面两种情况下会传入null"><a href="#下面两种情况下会传入null" class="headerlink" title="下面两种情况下会传入null"></a>下面两种情况下会传入<code>null</code></h5><ul>
+<li>使用<code>apply(..)</code>来“展开”一个数组，并当作参数传入一个函数</li>
+<li><code>bind(..)</code>可以对参数进行柯里化（预先设置一些参数）</li>
+</ul>
+<h5 id="副作用"><a href="#副作用" class="headerlink" title="副作用"></a>副作用</h5><p>总是传入<code>null</code>来忽略this绑定可能产生一些副作用。如果某个函数确实使用了this，那默认绑定规则会把this绑定到全局对象中。</p>
+<h5 id="副作用解决办法"><a href="#副作用解决办法" class="headerlink" title="副作用解决办法"></a>副作用解决办法</h5><p>传入一个特殊的对象（空对象），把this绑定到这个对象不会对你的程序产生任何副作用。</p>
+<p>JS中创建一个空对象最简单的方法是<strong><code>Object.create(null)</code></strong>，这个和<code>{}</code>很像，但是并不会创建<code>Object.prototype</code>这个委托，所以比<code>{}</code>更空。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">"a:"</span> + a + <span class="string">"，b:"</span> + b );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 我们的空对象</span></span><br><span class="line"><span class="keyword">var</span> ø = <span class="built_in">Object</span>.create( <span class="literal">null</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把数组”展开“成参数</span></span><br><span class="line">foo.apply( ø, [<span class="number">2</span>, <span class="number">3</span>] ); <span class="comment">// a:2，b:3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用bind(..)进行柯里化</span></span><br><span class="line"><span class="keyword">var</span> bar = foo.bind( ø, <span class="number">2</span> );</span><br><span class="line">bar( <span class="number">3</span> ); <span class="comment">// a:2，b:3</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在main.js中引入hello模块</span></span><br><span class="line"><span class="keyword">var</span> hello = <span class="built_in">require</span>(<span class="string">'./hello'</span>);</span><br><span class="line"></span><br><span class="line">hello();<span class="comment">//hello world</span></span><br></pre></td></tr></table></figure>
+<h3 id="间接引用"><a href="#间接引用" class="headerlink" title="间接引用"></a>间接引用</h3><p>间接引用下，调用这个函数会应用默认绑定规则。间接引用最容易在<strong>赋值</strong>时发生</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// p.foo = o.foo的返回值是目标函数的引用，所以调用位置是foo()而不是p.foo()或者o.foo()</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="keyword">this</span>.a );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> o = &#123; <span class="attr">a</span>: <span class="number">3</span>, <span class="attr">foo</span>: foo &#125;;</span><br><span class="line"><span class="keyword">var</span> p = &#123; <span class="attr">a</span>: <span class="number">4</span>&#125;;</span><br><span class="line"></span><br><span class="line">o.foo(); <span class="comment">// 3</span></span><br><span class="line">(p.foo = o.foo)(); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="CommonJS规范"><a href="#CommonJS规范" class="headerlink" title="CommonJS规范"></a>CommonJS规范</h2><p>这种模块加载机制被称为<strong>CommonJS规范</strong>。</p>
-<p>在这个规范下，每个<code>.js</code>文件都是一个模块，它们内部各自使用的变量名和函数名都互不冲突。</p>
-<p>一个模块想要对外暴露变量（函数也是变量），可以用<code>module.exports = variable;</code>，输出的变量可以是任意对象、函数、数组等等。</p>
-<p>一个模块要引用其他模块暴露的变量，用<code>var ref = require(&#39;module_name&#39;);</code>就拿到了引用模块的变量，引入的对象具体是什么，取决于引入模块输出的对象。</p>
-<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>JavaScript语言本身并没有一种模块机制来保证不同模块可以使用相同的变量名。Node.js实现<strong>模块</strong>是利用了JavaScript中的<strong>闭包</strong>。</p>
-<p>如果我们把一段JavaScript代码用一个函数包装起来，这段代码的所有“全局”变量就变成了函数内部的局部变量。</p>
-<p>我们编写的js模块如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'Hello'</span>;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'world'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(s + <span class="string">' '</span> + name + <span class="string">'!'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="软绑定"><a href="#软绑定" class="headerlink" title="软绑定"></a>软绑定</h3><ul>
+<li>硬绑定可以把this强制绑定到指定的对象（<code>new</code>除外），防止函数调用应用默认绑定规则。但是会降低函数的灵活性，使用<strong>硬绑定之后就无法使用隐式绑定或者显式绑定来修改this</strong>。</li>
+<li><strong>如果给默认绑定指定一个全局对象和undefined以外的值</strong>，那就可以实现和硬绑定相同的效果，同时保留隐式绑定或者显示绑定修改this的能力。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果this绑定到全局对象或者undefined，那就把指定的默认对象obj绑定到this,否则不会修改this</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">Function</span>.prototype.softBind) &#123;</span><br><span class="line">    <span class="built_in">Function</span>.prototype.softBind = <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> fn = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> curried = [].slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">var</span> bound = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> fn.apply(</span><br><span class="line">                ( !<span class="keyword">this</span> || <span class="keyword">this</span> === (Window || global) ? obj : <span class="keyword">this</span>,</span><br><span class="line">                 curried.concat.apply(curried, <span class="built_in">arguments</span>)</span><br><span class="line">            );</span><br><span class="line">        &#125;;</span><br><span class="line">        bound.prototype = <span class="built_in">Object</span>.create(fn.prototype);</span><br><span class="line">        <span class="keyword">return</span> bound;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>经Node.js包装后，变成：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 读取的hello.js代码:</span></span><br><span class="line">    <span class="keyword">var</span> s = <span class="string">'Hello'</span>;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">'world'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(s + <span class="string">' '</span> + name + <span class="string">'!'</span>);</span><br><span class="line">    <span class="comment">// hello.js代码结束</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h2 id="5、箭头函数绑定"><a href="#5、箭头函数绑定" class="headerlink" title="5、箭头函数绑定"></a>5、箭头函数绑定</h2><p>箭头函数无法使用上述四条规则，而是根据外层（函数或者全局）作用域（<strong>词法作用域</strong>）来决定this。</p>
+<ol>
+<li>箭头函数不绑定this，箭头函数中的this相当于普通变量。</li>
+<li>箭头函数的this寻值行为与普通变量相同，在作用域中逐级寻找。</li>
+<li>箭头函数的this无法通过bind，call，apply来<strong>直接</strong>修改（可以间接修改）。</li>
+<li>改变作用域中this的指向可以改变箭头函数的this。</li>
+<li>eg. <code>function closure(){()=&gt;{//code }}</code>，在此例中，我们通过改变封包环境<code>closure.bind(another)()</code>，来改变箭头函数this的指向。</li>
+</ol>
+<ul>
+<li><code>foo()</code>内部创建的箭头函数会捕获调用时<code>foo()</code>的this。由于<code>foo()</code>的this绑定到<code>obj1</code>，<code>bar</code>(引用箭头函数)的this也会绑定到<code>obj1</code>，<strong>箭头函数的绑定无法被修改</strong>(<code>new</code>也不行)。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 返回一个箭头函数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">a</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// this继承自foo()</span></span><br><span class="line">        <span class="built_in">console</span>.log( <span class="keyword">this</span>.a );</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    a: <span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    a: <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bar = foo.call( obj1 );</span><br><span class="line">bar.call( obj2 ); <span class="comment">// 2，不是3！</span></span><br></pre></td></tr></table></figure>
 
-<p>这样就实现了模块的隔离。</p>
-<p>而模块的输出则是：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 准备module对象:</span></span><br><span class="line"><span class="keyword">var</span> <span class="built_in">module</span> = &#123;</span><br><span class="line">    id: <span class="string">'hello'</span>,</span><br><span class="line">    exports: &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> load = <span class="function"><span class="keyword">function</span> (<span class="params">module</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 读取的hello.js代码:</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">greet</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello, '</span> + name + <span class="string">'!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">module</span>.exports = greet;</span><br><span class="line">    <span class="comment">// hello.js代码结束</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">module</span>.exports;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> exported = load(<span class="built_in">module</span>);</span><br><span class="line"><span class="comment">// 保存module:</span></span><br><span class="line">save(<span class="built_in">module</span>, exported);</span><br></pre></td></tr></table></figure>
-
-<p>变量<code>module</code>是Node在加载js文件前准备的一个变量，并将其传入加载函数。</p>
-<p>通过把参数<code>module</code>传递给<code>load()</code>函数，<code>hello.js</code>就顺利地把一个变量传递给了Node执行环境，Node会把<code>module</code>变量保存到某个地方。</p>
-<p>由于Node保存了所有导入的<code>module</code>，当我们用<code>require()</code>获取module时，Node找到对应的<code>module</code>，把这个<code>module</code>的<code>exports</code>变量返回，这样，另一个模块就顺利拿到了模块的输出。</p>
-<h2 id="module-exports和exports"><a href="#module-exports和exports" class="headerlink" title="module.exports和exports"></a>module.exports和exports</h2><p>module.exports和exports都可以直接输出，但exports不能赋值</p>
-<p>首先，Node会把整个待加载的<code>hello.js</code>文件放入一个包装函数<code>load</code>中执行。在执行这个<code>load()</code>函数前，Node准备好了module变量：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="built_in">module</span> = &#123;</span><br><span class="line">    id: <span class="string">'hello'</span>,</span><br><span class="line">    exports: &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><code>load()</code>函数最终返回<code>module.exports</code>：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> load = <span class="function"><span class="keyword">function</span> (<span class="params">exports, module</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// hello.js的文件内容</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="comment">// load函数返回:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">module</span>.exports;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> exported = load(<span class="built_in">module</span>.exports, <span class="built_in">module</span>);</span><br></pre></td></tr></table></figure>
-
-<p>也就是说，默认情况下，Node准备的<code>exports</code>变量和<code>module.exports</code>变量实际上是同一个变量，并且初始化为空对象<code>{}</code>，于是，我们可以写：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exports.foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">'foo'</span>; &#125;;</span><br><span class="line">exports.bar = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">'bar'</span>; &#125;;</span><br></pre></td></tr></table></figure>
-
-<p>也可以写：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports.foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">'foo'</span>; &#125;;</span><br><span class="line"><span class="built_in">module</span>.exports.bar = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">'bar'</span>; &#125;;</span><br></pre></td></tr></table></figure>
-
-<p>换句话说，Node默认给你准备了一个空对象<code>{}</code>，这样你可以直接往里面加东西。</p>
-<p>但是，如果我们要输出的是一个函数或数组，那么，只能给<code>module.exports</code>赋值：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">'foo'</span>; &#125;;</span><br></pre></td></tr></table></figure>
-
-<p>给<code>exports</code>赋值是无效的，因为赋值后，<code>module.exports</code>仍然是空对象<code>{}</code>。</p>
-<p>如果要输出一个键值对象<code>{}</code>，可以利用<code>exports</code>这个已存在的空对象<code>{}</code>，并继续在上面添加新的键值；</p>
-<p>如果要输出一个函数或数组，必须直接对<code>module.exports</code>对象赋值。</p>
-<p>最终，我们<em>强烈建议</em>使用<code>module.exports = xxx</code>的方式来输出模块变量，这样，你只需要记忆一种方法。</p>
 
       
     </div>
@@ -491,7 +504,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端-node/" rel="tag"># -前端 -node</a>
+            <a href="/tags/前端-JavaScript/" rel="tag"># -前端 -JavaScript</a>
           
         </div>
       
@@ -504,8 +517,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/24/flex/" rel="next" title="FLEX布局">
-                <i class="fa fa-chevron-left"></i> FLEX布局
+              <a href="/2019/07/01/curry-function/" rel="next" title="柯里化函数">
+                <i class="fa fa-chevron-left"></i> 柯里化函数
               </a>
             
           </div>
@@ -514,8 +527,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/30/browser-cache/" rel="prev" title="浏览器缓存机制（HTTP缓存机制）">
-                浏览器缓存机制（HTTP缓存机制） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/02/bind/" rel="prev" title="bind、apply、call">
+                bind、apply、call <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -666,7 +679,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模块"><span class="nav-number">1.</span> <span class="nav-text">模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.1.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CommonJS规范"><span class="nav-number">1.2.</span> <span class="nav-text">CommonJS规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现原理"><span class="nav-number">1.3.</span> <span class="nav-text">实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#module-exports和exports"><span class="nav-number">1.4.</span> <span class="nav-text">module.exports和exports</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绑定规则"><span class="nav-number">2.</span> <span class="nav-text">绑定规则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、默认绑定"><span class="nav-number">2.1.</span> <span class="nav-text">1、默认绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、隐式绑定"><span class="nav-number">2.2.</span> <span class="nav-text">2、隐式绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定到当前上下文对象"><span class="nav-number">2.2.1.</span> <span class="nav-text">绑定到当前上下文对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特定情况下会丢失绑定对象"><span class="nav-number">2.2.2.</span> <span class="nav-text">特定情况下会丢失绑定对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、显式绑定"><span class="nav-number">2.3.</span> <span class="nav-text">3、显式绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#丢失绑定解决办法"><span class="nav-number">2.4.</span> <span class="nav-text">丢失绑定解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬绑定"><span class="nav-number">2.4.0.1.</span> <span class="nav-text">硬绑定</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、new绑定"><span class="nav-number">2.5.</span> <span class="nav-text">4、new绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#new的过程？"><span class="nav-number">2.5.1.</span> <span class="nav-text">new的过程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传入Null"><span class="nav-number">2.5.2.</span> <span class="nav-text">传入Null</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下面两种情况下会传入null"><span class="nav-number">2.5.2.0.1.</span> <span class="nav-text">下面两种情况下会传入null</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#副作用"><span class="nav-number">2.5.2.0.2.</span> <span class="nav-text">副作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#副作用解决办法"><span class="nav-number">2.5.2.0.3.</span> <span class="nav-text">副作用解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#间接引用"><span class="nav-number">2.5.3.</span> <span class="nav-text">间接引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软绑定"><span class="nav-number">2.5.4.</span> <span class="nav-text">软绑定</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#5、箭头函数绑定"><span class="nav-number">2.6.</span> <span class="nav-text">5、箭头函数绑定</span></a></li></div>
             
 
           </div>
